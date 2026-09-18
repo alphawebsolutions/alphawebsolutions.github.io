@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#145c3c">
+  <meta name="description" content="Shop groceries, fresh produce, household essentials and more from ExpressBazaar in Kadugodi, Bengaluru.">
+  <title>ExpressBazaar | Groceries in Kadugodi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="announcement">Fresh essentials · Fair prices · Easy WhatsApp ordering</div>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="ExpressBazaar home">
+        <span class="brand-mark" aria-hidden="true">EB</span>
+        <span><strong>ExpressBazaar</strong><small>Kadugodi, Bengaluru</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#shop">Shop</a>
+        <a href="#location">Location</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+      <button class="cart-trigger" id="openCartButton" type="button" aria-label="Open shopping cart">
+        <span aria-hidden="true">🛒</span>
+        <span class="cart-trigger-label">Cart</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> Your neighbourhood mart</p>
+        <h1>Everything your home needs, <em>all in one basket.</em></h1>
+        <p class="hero-text">Browse daily groceries, fresh produce, personal care and household essentials. Add what you need and send the complete order on WhatsApp.</p>
+        <form class="hero-search" id="heroSearchForm" role="search">
+          <span aria-hidden="true">⌕</span>
+          <label class="sr-only" for="heroSearch">Search groceries</label>
+          <input id="heroSearch" type="search" placeholder="Search rice, milk, vegetables…" autocomplete="off">
+          <button type="submit">Search</button>
+        </form>
+        <div class="trust-row" aria-label="Store highlights">
+          <span>✓ Clear pricing</span>
+          <span>✓ Stock updates</span>
+          <span>✓ WhatsApp orders</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="ExpressBazaar grocery categories">
+        <div class="hero-card hero-card-main">
+          <div>
+            <span class="mini-label">SHOP SMARTER</span>
+            <strong>221 essentials</strong>
+            <small>Across 12 useful categories</small>
+          </div>
+          <span class="basket-emoji" aria-hidden="true">🧺</span>
+        </div>
+        <div class="hero-card floating-card fruit-card"><span>🥬</span><strong>Fresh picks</strong></div>
+        <div class="hero-card floating-card pantry-card"><span>🌾</span><strong>Daily staples</strong></div>
+        <div class="hero-card floating-card home-card"><span>🧼</span><strong>Home care</strong></div>
+      </div>
+    </section>
+
+    <section class="shop-section" id="shop">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span></span> Browse the mart</p>
+            <h2>What are you looking for?</h2>
+          </div>
+          <p id="catalogStatus">Loading the catalogue…</p>
+        </div>
+
+        <div class="category-strip" id="categoryStrip" aria-label="Product categories"></div>
+
+        <div class="catalog-toolbar">
+          <div class="toolbar-search">
+            <span aria-hidden="true">⌕</span>
+            <label class="sr-only" for="catalogSearch">Search products</label>
+            <input id="catalogSearch" type="search" placeholder="Search all products">
+          </div>
+          <label class="select-wrap">
+            <span class="sr-only">Availability</span>
+            <select id="stockFilter">
+              <option value="all">All availability</option>
+              <option value="in">In stock only</option>
+              <option value="out">Out of stock</option>
+            </select>
+          </label>
+          <label class="select-wrap">
+            <span class="sr-only">Sort products</span>
+            <select id="sortProducts">
+              <option value="featured">Featured first</option>
+              <option value="price-low">Price: low to high</option>
+              <option value="price-high">Price: high to low</option>
+              <option value="name">Name: A to Z</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="active-filter-row">
+          <p id="resultSummary"></p>
+          <button id="clearFilters" type="button" class="text-button" hidden>Clear filters</button>
+        </div>
+
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+        <div class="empty-state" id="emptyState" hidden>
+          <span aria-hidden="true">🧺</span>
+          <h3>No matching products</h3>
+          <p>Try another search or clear your filters.</p>
+          <button type="button" id="emptyClearButton" class="primary-button">Show all products</button>
+        </div>
+        <div class="pagination-wrap" id="paginationWrap" hidden>
+          <button type="button" class="secondary-button" id="loadMoreButton">Load more products</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="location-section" id="location">
+      <div class="shell location-grid">
+        <div class="location-copy">
+          <p class="eyebrow light"><span></span> Visit ExpressBazaar</p>
+          <h2>Your everyday essentials are right around the corner.</h2>
+          <p id="storeAddress">Shop No:007, Channasandra Main Rd, near ITPL Main Road, 3G Homes Crimson Layout, Kadugodi, Bengaluru, Karnataka 560067</p>
+          <div class="location-actions">
+            <a class="light-button" id="directionsLink" href="#" target="_blank" rel="noopener">Get directions ↗</a>
+            <button class="outline-light-button" id="locationCartButton" type="button">View my cart</button>
+          </div>
+        </div>
+        <div class="map-frame">
+          <iframe id="storeMap" title="ExpressBazaar location on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <div class="brand footer-brand">
+        <span class="brand-mark" aria-hidden="true">EB</span>
+        <span><strong>ExpressBazaar</strong><small>Your neighbourhood mart</small></span>
+      </div>
+      <p>Prices and availability may be updated by the store. Final confirmation is provided on WhatsApp.</p>
+      <div class="footer-links">
+        <a href="admin.html">Store admin</a>
+        <a href="https://alphawebsolutions.github.io/" target="_blank" rel="noopener">Contact Alpha Web Solutions ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="drawer-backdrop" id="cartBackdrop" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="cart-header">
+      <div>
+        <p class="eyebrow"><span></span> Your basket</p>
+        <h2 id="cartTitle">Review your order</h2>
+      </div>
+      <button class="icon-button" id="closeCartButton" type="button" aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty">
+      <span aria-hidden="true">🛒</span>
+      <h3>Your cart is empty</h3>
+      <p>Add some products to start your order.</p>
+      <button type="button" class="secondary-button" id="startShoppingButton">Start shopping</button>
+    </div>
+    <div class="cart-summary" id="cartSummary" hidden>
+      <div><span>Subtotal</span><strong id="cartSubtotal">₹0</strong></div>
+      <div><span>Delivery fee</span><strong id="cartDelivery">₹0</strong></div>
+      <div class="cart-total"><span>Total</span><strong id="cartTotal">₹0</strong></div>
+      <p class="minimum-note" id="minimumOrderNote" hidden></p>
+      <button class="whatsapp-button" id="whatsappOrderButton" type="button"><span aria-hidden="true">◉</span> Send order on WhatsApp</button>
+      <button class="clear-cart-button" id="clearCartButton" type="button">Clear cart</button>
+    </div>
+  </aside>
+
+  <button class="mobile-cart-bar" id="mobileCartBar" type="button" hidden>
+    <span><strong id="mobileCartCount">0 items</strong><small id="mobileCartTotal">₹0</small></span>
+    <span>View cart →</span>
+  </button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><div class="noscript">Please enable JavaScript to browse products and use the cart.</div></noscript>
+
+  <script src="config.js"></script>
+  <script src="seed-data.js"></script>
+  <script src="app.js"></script>
+  <script src="../../assets/js/demo-navigation.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#143d52">
+  <meta name="description" content="Shop eyeglasses, sunglasses, computer glasses, reading glasses, contact lenses and eyewear accessories at VisionNest Opticals.">
+  <title>VisionNest Opticals | Eyeglasses, Sunglasses & Eye Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">Free frame styling consultation · Eye test appointments · WhatsApp ordering</div>
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="VisionNest Opticals home"><span class="brand-mark">VN</span><span><strong>VisionNest</strong><small>OPTICALS</small></span></a>
+    <nav aria-label="Main navigation"><a href="#shop">Shop</a><a href="#services">Services</a><a href="#about">Why us</a></nav>
+    <div class="header-actions"><button class="ghost-btn" id="bookTestTop">Book eye test</button><button class="cart-btn" id="openCart">Bag <span id="cartCount">0</span></button></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Sharper vision. Better style.</p>
+        <h1>Find frames that feel <em>made for you.</em></h1>
+        <p>Explore everyday eyeglasses, prescription sunglasses, screen-protection lenses, contacts and eye-care essentials—with clear pricing and helpful fit details.</p>
+        <div class="hero-actions"><a class="primary-btn" href="#shop">Shop all eyewear →</a><button class="secondary-btn" id="bookTestHero">Book a free eye test</button></div>
+        <div class="hero-trust"><span>✓ 100% UV options</span><span>✓ Prescription-ready</span><span>✓ 7-day fit support</span></div>
+      </div>
+      <div class="hero-art" aria-label="Eyewear collection">
+        <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1100&q=85" alt="Stylish eyewear frames" fetchpriority="high">
+        <div class="hero-badge"><b>40+</b><span>curated styles</span></div>
+        <div class="hero-note">Frames from <b>₹799</b></div>
+      </div>
+    </section>
+
+    <section class="category-section" aria-labelledby="categoryTitle">
+      <div class="section-head"><div><p class="eyebrow">Browse your way</p><h2 id="categoryTitle">Everything for your eyes</h2></div><p>Choose by purpose, then refine by collection, frame shape and price.</p></div>
+      <div class="category-grid" id="categoryCards"></div>
+    </section>
+
+    <section class="shop-section" id="shop">
+      <div class="section-head"><div><p class="eyebrow">The collection</p><h2>Find your next pair</h2></div><p id="resultCount">Loading eyewear…</p></div>
+      <div class="toolbar">
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search frames, lenses or features" aria-label="Search products"></label>
+        <select id="audienceFilter" aria-label="Filter by collection"><option value="all">All collections</option><option value="men">Men</option><option value="women">Women</option><option value="kids">Kids</option><option value="unisex">Unisex</option></select>
+        <select id="shapeFilter" aria-label="Filter by frame shape"><option value="all">All shapes</option><option value="rectangle">Rectangle</option><option value="round">Round</option><option value="wayfarer">Wayfarer</option><option value="aviator">Aviator</option><option value="cat-eye">Cat-eye</option><option value="rimless">Rimless</option></select>
+        <select id="sortFilter" aria-label="Sort products"><option value="featured">Featured</option><option value="low">Price: Low to high</option><option value="high">Price: High to low</option><option value="name">Name: A–Z</option></select>
+      </div>
+      <div class="active-category" id="activeCategory"></div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <div class="empty" id="emptyState" hidden><span>◉</span><h3>No matching eyewear</h3><p>Try another search or clear the filters.</p><button class="primary-btn" id="clearFilters">Show all products</button></div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="services-intro"><p class="eyebrow light">Complete optical care</p><h2>More than just frames.</h2><p>Get help choosing the right fit, power and lens type before placing your order.</p><button class="light-btn" id="bookTestService">Reserve an eye test →</button></div>
+      <div class="service-list">
+        <article><span>01</span><div><h3>Comprehensive eye testing</h3><p>Distance, near-vision and prescription checks with an optometrist appointment.</p></div></article>
+        <article><span>02</span><div><h3>Prescription lens guidance</h3><p>Single-vision, bifocal and progressive options with anti-glare and blue-filter upgrades.</p></div></article>
+        <article><span>03</span><div><h3>Frame fitting & adjustments</h3><p>Size guidance, nose-pad adjustment and basic fitting support for better everyday comfort.</p></div></article>
+        <article><span>04</span><div><h3>Cleaning & minor repairs</h3><p>Frame tightening, nose-pad replacement and eyewear-care essentials available in store.</p></div></article>
+      </div>
+    </section>
+
+    <section class="lens-guide" id="about">
+      <div><p class="eyebrow">Choose lenses confidently</p><h2>A simple lens guide</h2><p>Pick a frame now and share your prescription on WhatsApp. Final lens suitability and power should be confirmed by a qualified eye-care professional.</p></div>
+      <div class="lens-cards"><article><b>Frame only</b><span>From ₹799</span><p>For customers who already have lenses or want a fashion frame.</p></article><article><b>Single vision</b><span>+ ₹799</span><p>One corrective power for distance or reading.</p></article><article><b>Bifocal</b><span>+ ₹1,499</span><p>Separate distance and near-vision zones.</p></article><article><b>Progressive</b><span>+ ₹2,499</span><p>Multiple viewing zones with no visible dividing line.</p></article></div>
+    </section>
+
+    <section class="faq">
+      <div class="section-head"><div><p class="eyebrow">Common questions</p><h2>Before you order</h2></div></div>
+      <details><summary>How do I share my eye prescription?</summary><p>Add your preferred frame and lens option to the cart. The WhatsApp message will ask you to attach your latest prescription after sending the order.</p></details>
+      <details><summary>Can I order prescription sunglasses?</summary><p>Yes. Select a prescription-sunglasses product and choose the appropriate lens option. Availability depends on your power and selected frame.</p></details>
+      <details><summary>How do I choose the right frame size?</summary><p>Compare the frame width shown on each product with the measurements printed inside your current glasses. In-store fitting is recommended when unsure.</p></details>
+      <details><summary>Are contact lenses available without a prescription?</summary><p>Contact lenses should be selected using a valid prescription and professional fitting advice. Share your lens power and preferred replacement cycle on WhatsApp.</p></details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand"><span class="brand-mark">VN</span><div><strong>VisionNest Opticals</strong><p>See clearly. Look confidently.</p></div></div>
+    <div><b>Store hours</b><p>Mon–Sat: 10:00 AM–8:30 PM<br>Sunday: 10:30 AM–6:30 PM</p></div>
+    <div><b>Need assistance?</b><p><a href="https://wa.me/919392417891?text=Hi%20Alpha%20Web%20Solutions%2C%20I%20viewed%20the%20VisionNest%20Opticals%20demo." target="_blank" rel="noopener">WhatsApp enquiry ↗</a><br><a href="https://alphawebsolutions.github.io/" target="_blank" rel="noopener">Contact Alpha Web Solutions ↗</a></p></div>
+    <small>Demo website by Alpha Web Solutions</small>
+  </footer>
+
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-labelledby="cartTitle">
+    <div class="drawer-head"><div><p class="eyebrow">Your selection</p><h2 id="cartTitle">Eyewear bag</h2></div><button class="icon-btn" id="closeCart" aria-label="Close cart">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div id="cartEmpty" class="cart-empty"><span>◉</span><h3>Your bag is empty</h3><p>Add eyewear to start your order.</p></div>
+    <div id="cartSummary" class="cart-summary" hidden><div><span>Products</span><strong id="subtotal">₹0</strong></div><div><span>Lens upgrades</span><strong id="lensTotal">₹0</strong></div><div class="grand"><span>Estimated total</span><strong id="grandTotal">₹0</strong></div><label class="prescription-note"><span>Prescription preference</span><select id="prescriptionStatus"><option>I will share my prescription on WhatsApp</option><option>I need an eye test</option><option>Use my previous prescription</option><option>No prescription required</option></select></label><button class="whatsapp-btn" id="sendWhatsApp">Send complete order on WhatsApp</button><button class="text-btn" id="clearCart">Clear bag</button><small>Final price depends on prescription, lens index and coatings selected.</small></div>
+  </aside>
+
+  <dialog id="productDialog" class="product-dialog"><button class="dialog-close" id="closeProduct" aria-label="Close product">×</button><div id="productDetail"></div></dialog>
+  <dialog id="testDialog" class="test-dialog"><button class="dialog-close" id="closeTest" aria-label="Close booking">×</button><p class="eyebrow">Eye test appointment</p><h2>Choose a convenient time</h2><form id="testForm"><label>Name<input name="name" required placeholder="Your name"></label><label>Phone<input name="phone" required inputmode="tel" placeholder="10-digit mobile number"></label><label>Preferred date<input name="date" required type="date"></label><label>Preferred time<select name="time"><option>10:00 AM–12:00 PM</option><option>12:00 PM–2:00 PM</option><option>3:00 PM–5:00 PM</option><option>5:00 PM–7:30 PM</option></select></label><button class="primary-btn" type="submit">Request appointment on WhatsApp</button></form></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+  <script src="../../assets/js/demo-navigation.js"></script>
+</body>
+</html>
